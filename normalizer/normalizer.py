@@ -90,6 +90,7 @@ class Normalizer(object):
                         norm = self.normalizers[channel].normalize(hpfeed_item['payload'],
                                                                    channel, hpfeed_item['timestamp'],
                                                                    ignore_rfc1918=self.ignore_rfc1918)
+                        logger.info(norm)
 
                         #batch up normalized items
                         to_be_inserted.append((norm, hpfeed_item['_id'], hpfeed_item['ident']))
