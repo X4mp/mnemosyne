@@ -30,10 +30,10 @@ class SambaFileaudit(BaseNormalizer):
             return []
 
         session = {
-            'timestamp': o_data['timestamp'],
+            'timestamp': submission_timestamp,
             'source_ip': o_data['source_ip'],
             'source_port': o_data['username'],
-            'destination_ip': o_data['fileshare'],
+            'destination_ip': o_data['fileshare_name'],
             'destination_port': 135,
             'honeypot': 'samba',
             'protocol': 'smb'
