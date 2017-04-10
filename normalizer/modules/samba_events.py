@@ -21,22 +21,22 @@ from normalizer.modules.basenormalizer import BaseNormalizer
 
 
 class SambaFileaudit(BaseNormalizer):
-    channels = ('samba.fileaudit',)
+    channels = ('samba.events',)
 
     def normalize(self, data, channel, submission_timestamp, ignore_rfc1918=True):
         o_data = self.parse_record_data(data)
 
-        if ignore_rfc1918 and self.is_RFC1918_addr(o_data['source_ip']):
-            return []
+#        if ignore_rfc1918 and self.is_RFC1918_addr(o_data['source_ip']):
+#            return []
 
         session = {
             'timestamp': submission_timestamp,
-            'source_ip': o_data['username']+':'+o_data['hostname'],
-            'source_port': o_data['source_ip'],
-            'destination_ip': o_data['fileshare_name'],
-            'destination_port': 135,
-            'honeypot': 'samba',
-            'protocol': o_data['action']
+            'source_ip': o_data['source_ip'],
+            'source_port': o_data['source_port'],
+            'destination_ip': o_data['destination'],
+            'destination_port': o_data['destination'],
+            'honeypot': 'DomainController',
+            'protocol': o_data['username']
         }
         relations = {'session': session}
         return [relations]

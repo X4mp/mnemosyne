@@ -88,6 +88,7 @@ class Normalizer(object):
                     if hpfeed_item['_id'] < oldest_id:
                         oldest_id = hpfeed_item['_id']
                     if channel in self.normalizers:
+			logger.error('{0}: {1}'.format(channel, hpfeed_item['timestamp']))
                         norm = self.normalizers[channel].normalize(hpfeed_item['payload'],
                                                                    channel, hpfeed_item['timestamp'],
                                                                    ignore_rfc1918=self.ignore_rfc1918)
