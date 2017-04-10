@@ -11,7 +11,7 @@ ident =
 secret =
 host = hpfriends.honeycloud.net
 port = 20000
-channels = amun.events,conpot.events,thug.events,beeswarm.hive,dionaea.capture,thug.files,beeswarn.feeder,cuckoo.analysis,kippo.sessions,cowrie.sessions,glastopf.events,glastopf.files,mwbinary.dionaea.sensorunique,wordpot.events,shockpot.events,p0f.events,suricata.events,elastichoney.events,samba.fileaudit
+channels = amun.events,conpot.events,thug.events,beeswarm.hive,dionaea.capture,thug.files,beeswarn.feeder,cuckoo.analysis,kippo.sessions,cowrie.sessions,glastopf.events,glastopf.files,mwbinary.dionaea.sensorunique,wordpot.events,shockpot.events,p0f.events,suricata.events,elastichoney.events,samba.fileaudit,samba.events
 
 [file_log]
 enabled = True
